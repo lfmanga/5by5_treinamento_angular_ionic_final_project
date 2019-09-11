@@ -1,16 +1,21 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { MainPage } from './pages/main/main.page';
 
 const routes: Routes = [
   /* main */
   {
     path: '',
-    loadChildren: () => import('./pages/main/main.module').then(m => m.MainPageModule),
+    component: MainPage,
     children: [
       {
         path: '',
         loadChildren: () => import('./pages/home/home.module').then(m => m.HomePageModule)
       },
+      {
+        path: 'contacts', 
+        loadChildren: () => import('./pages/contacts/contacts.module').then(m => m.ContactsPageModule)
+      }
     ]
   },
   /* login */
@@ -28,7 +33,7 @@ const routes: Routes = [
   {
     path: '**',
     loadChildren: () => import('./pages/not-found/not-found.module').then(m => m.NotFoundPageModule)
-  }
+  },
 ];
 
 @NgModule({
