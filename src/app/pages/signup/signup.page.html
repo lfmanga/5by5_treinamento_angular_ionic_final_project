@@ -9,73 +9,27 @@
           <ion-card-content>
             <form [formGroup]="form">
               <ion-list>
-                <ion-item>
-                  <ion-label position="floating">nome</ion-label>
-                  <ion-input type="text" formControlName="name">
-                  </ion-input>
-                  <small
-                    *ngIf="form.controls.name.invalid && !form.controls.name.pristine && form.controls.name.errors.required">
-                    <ion-text color="danger">
-                      name is required
-                    </ion-text>
-                  </small>
-                  <small
-                    *ngIf="form.controls.name.invalid && !form.controls.name.pristine && form.controls.name.errors.lastName">
-                    <ion-text color="danger">
-                      last name is required
-                    </ion-text>
-                  </small>
-                  <small
-                    *ngIf="form.controls.name.invalid && !form.controls.name.pristine && form.controls.name.errors.pattern">
-                    <ion-text color="danger">
-                      name is invalid
-                    </ion-text>
-                  </small>
-                </ion-item>
-                <ion-item>
-                  <ion-label position="floating">email</ion-label>
-                  <ion-input type="email" formControlName="email"></ion-input>
-                  <small
-                    *ngIf="form.controls.email.invalid && !form.controls.email.pristine && form.controls.email.errors.required">
-                    <ion-text color="danger">
-                      email is required
-                    </ion-text>
-                  </small>
-                  <small
-                    *ngIf="form.controls.email.invalid && !form.controls.email.pristine && form.controls.email.errors.email">
-                    <ion-text color="danger">
-                      email is invalid
-                    </ion-text>
-                  </small>
-                </ion-item>
-                <ion-item>
-                  <ion-label position="floating">password</ion-label>
-                  <ion-input type="password" formControlName="password">
-                  </ion-input>
-                  <small
-                    *ngIf="form.controls.password.invalid && !form.controls.password.pristine && form.controls.password.errors.required">
-                    <ion-text color="danger">
-                      password is required
-                    </ion-text>
-                  </small>
-                  <small
-                    *ngIf="form.controls.password.invalid && !form.controls.password.pristine && form.controls.password.errors.pattern">
-                    <ion-text color="danger">
-                      password is invalid
-                    </ion-text>
-                  </small>
-                </ion-item>
+
+                <app-input-with-messages labelText="name" [control]="form.controls.name" [messages]="messages.name">
+                </app-input-with-messages>
+
+                <app-input-with-messages labelText="email" [control]="form.controls.email" [messages]="messages.email">
+                </app-input-with-messages>
+
+                <app-input-with-messages labelText="password" [control]="form.controls.password"
+                  [messages]="messages.password">
+                </app-input-with-messages>
+
               </ion-list>
             </form>
           </ion-card-content>
         </ion-card>
         <p>
-          <ion-button color="primary" shape="round" fill="outline" size="large" expand="full" (click)="submit()">
-              signup
+          <ion-button color="primary" shape="round" size="default" routerLink="/login">
+            cancel
           </ion-button>
-          <br />
-          <ion-button routerLink="/login" color="secondary" fill="clear" size="small" expand="full">
-            cancelar
+          <ion-button [disabled]="form.invalid" color="primary" shape="round" size="default" (click)="add()">
+            signup
           </ion-button>
         </p>
       </ion-col>

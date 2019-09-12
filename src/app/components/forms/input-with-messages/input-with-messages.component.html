@@ -1,0 +1,15 @@
+<ion-item>
+  <ion-label position="floating">{{labelText}}</ion-label>
+  <ion-input type="text" [formControl]="control">
+  </ion-input>
+</ion-item>
+
+<div *ngIf="control.invalid && !control.pristine">
+  <p *ngFor="let message of getMessages()">
+    <small>
+      <ion-text color="danger">
+        {{ message.text }}
+      </ion-text>
+    </small>
+  </p>
+</div>

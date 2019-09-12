@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { SignupPage } from './signup.page';
+import { InputWithMessagesComponent } from 'src/app/components/forms/input-with-messages/input-with-messages.component';
 
 const routes: Routes = [
   {
@@ -17,11 +18,14 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
     IonicModule,
+    FormsModule,
+		ReactiveFormsModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [SignupPage]
+  declarations: [
+    SignupPage,
+    InputWithMessagesComponent
+  ]
 })
 export class SignupPageModule {}

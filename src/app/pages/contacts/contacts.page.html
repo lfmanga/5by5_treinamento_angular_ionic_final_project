@@ -1,9 +1,23 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>contacts</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+  <ion-button color="primary" shape="round" fill="outline" size="default" routerLink="/contacts">
+    go to /contacts
+  </ion-button>
+
+  <ion-list>
+    <ion-item *ngFor="let contact of contacts">
+      <ion-avatar slot="start">
+        <img src="{{ contact.picture }}" />
+      </ion-avatar>
+      <ion-label class="ion-text-wrap">
+        {{ contact.name.first }} {{ contact.name.last }} <br />
+        <small>
+          {{ contact.address }}
+        </small>
+      </ion-label>
+      <ion-button slot="end" (click)="showActions()">
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-button>  
+    </ion-item>
+  </ion-list>
 
 </ion-content>

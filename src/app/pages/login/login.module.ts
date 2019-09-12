@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
 import { LoginPage } from './login.page';
+import { InputWithMessagesComponent } from 'src/app/components/forms/input-with-messages/input-with-messages.component';
 
 const routes: Routes = [
   {
@@ -17,10 +18,14 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
     IonicModule,
+    FormsModule,
+		ReactiveFormsModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [LoginPage]
+  declarations: [
+    LoginPage,
+    InputWithMessagesComponent
+  ]
 })
-export class LoginPageModule {}
+export class LoginPageModule { }

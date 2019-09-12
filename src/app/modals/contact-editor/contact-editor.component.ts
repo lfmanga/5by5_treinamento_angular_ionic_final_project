@@ -1,16 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { LoadingController, ToastController, NavController } from '@ionic/angular';
-
 import { AccountService } from 'src/app/services/account.service';
-import { AuthUtil } from 'src/app/utils/auth.util';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
+  selector: 'app-contact-editor',
+  templateUrl: './contact-editor.component.html',
+  styleUrls: ['./contact-editor.component.scss'],
 })
-export class LoginPage implements OnInit {
+export class ContactEditorComponent implements OnInit {
 
   public form: FormGroup;
 
@@ -18,7 +16,7 @@ export class LoginPage implements OnInit {
     email: [
       {
         name: 'required',
-        text: 'email is requried'
+        text: 'name is requried'
       },
       {
         name: 'email',
@@ -28,11 +26,11 @@ export class LoginPage implements OnInit {
     password: [
       {
         name: 'required',
-        text: 'password is requried'
+        text: 'name is requried'
       },
       {
         name: 'pattern',
-        text: 'password is invalid'
+        text: 'name is invalid'
       },
     ]
   }
@@ -41,6 +39,7 @@ export class LoginPage implements OnInit {
     private formBuilder: FormBuilder,
     private accountService: AccountService,
     private loadingCtrl: LoadingController,
+    private toastCtrl: ToastController,
     private navCtrl: NavController
   ) {
     this.form = formBuilder.group({
@@ -57,20 +56,4 @@ export class LoginPage implements OnInit {
 
   ngOnInit() { }
 
-  async login() {
-    const loading = await this.loadingCtrl.create({
-      message: 'waiting...'
-    });
-    loading.present();
-    this.accountService
-      .login(this.form.value)
-      .subscribe(
-        (res: any) => {
-          AuthUtil.set(res);
-          loading.dismiss();
-          this.navCtrl.navigateRoot('/');
-        },
-        (err) => { loading.dismiss(); }
-      )
-  }
 }
