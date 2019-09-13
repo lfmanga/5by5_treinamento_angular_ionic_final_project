@@ -1,10 +1,10 @@
 <ion-content>
-  <ion-button color="primary" shape="round" fill="outline" size="default" routerLink="/contacts">
-    go to /contacts
-  </ion-button>
+
+  <ion-searchbar placeholder="search..." ([ngModel])="searchText" animated></ion-searchbar>
+
 
   <ion-list>
-    <ion-item *ngFor="let contact of contacts">
+    <ion-item *ngFor="let contact of (contacts | filter : searchText)">
       <ion-avatar slot="start">
         <img src="{{ contact.picture }}" />
       </ion-avatar>
@@ -14,10 +14,16 @@
           {{ contact.address }}
         </small>
       </ion-label>
-      <ion-button slot="end" (click)="showActions()">
-          <ion-icon slot="icon-only" name="menu"></ion-icon>
-      </ion-button>  
+      <ion-button slot="end" (click)="showActions(contact)">
+        <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-button>
     </ion-item>
   </ion-list>
+
+  <ion-fab vertical="center" horizontal="center" slot="fixed">
+    <ion-fab-button color="success" (click)="newContact()">
+      <ion-icon name="person-add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
 </ion-content>

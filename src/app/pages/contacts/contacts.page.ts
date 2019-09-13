@@ -11,6 +11,7 @@ import { ContactEditorComponent } from 'src/app/modals/contact-editor/contact-ed
 export class ContactsPage implements OnInit {
 
   public contacts: [];
+  public searchText: string = '';
 
   constructor(
     private contactService: ContactService,
@@ -36,7 +37,7 @@ export class ContactsPage implements OnInit {
       )
   }
 
-  async showActions() {
+  async showActions(contact) {
     const actionSheet = await this.actionSheetCtrl.create({
       buttons: [
         {
@@ -44,24 +45,30 @@ export class ContactsPage implements OnInit {
           role: 'destructive',
           icon: 'trash',
           handler: () => {
-            console.log('delete clicked');
+            //todo deleted
           }
         },
         {
           text: 'edit',
           icon: 'create',
-          handler: () => { this.presentModalEditor(); }
+          handler: () => { this.presentModalEditor(contact); }
         }
       ]
     });
     actionSheet.present();
   }
 
-  async presentModalEditor() {
+  async presentModalEditor(contact) {
     const modal = await this.modalCtrl.create({
       component: ContactEditorComponent,
+      componentProps: {
+        contact: contact
+      }
     })
     return await modal.present();
   }
 
+  async newContact() {
+    this.presentModalEditor(null);
+  }
 }
