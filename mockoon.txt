@@ -1,0 +1,122 @@
+{
+    "id": "mockoon_export",
+    "appVersion": "1.4.0",
+    "checksum": "9ef100fb55d65fde7545191c389846bf",
+    "subject": "environment",
+    "data": {
+        "uuid": "e2e4a300-d32b-11e9-83c1-27af75150ef0",
+        "name": "final-project",
+        "endpointPrefix": "",
+        "latency": 0,
+        "port": 3002,
+        "routes": [
+            {
+                "uuid": "",
+                "documentation": "",
+                "method": "post",
+                "endpoint": "accounts",
+                "body": "{\n    \"name\" : \"golden boy\",\n    \"email\" : \"golden.boy@5by5.com.br\",\n    \"password\" : \"123456\" \n}",
+                "latency": 1000,
+                "statusCode": "200",
+                "headers": [
+                    {
+                        "key": "",
+                        "value": ""
+                    }
+                ],
+                "filePath": "",
+                "sendFileAsBody": false
+            },
+            {
+                "uuid": "d68a9b60-d587-11e9-9144-d3084e762c64",
+                "documentation": "",
+                "method": "post",
+                "endpoint": "accounts/login",
+                "body": "{\n    \"name\" : \"golden boy\",\n    \"email\" : \"golden.boy@5by5.com.br\",\n    \"password\" : \"123456\" \n}",
+                "latency": 1000,
+                "statusCode": "200",
+                "headers": [
+                    {
+                        "key": "",
+                        "value": ""
+                    }
+                ],
+                "filePath": "",
+                "sendFileAsBody": false
+            },
+            {
+                "uuid": "fb025590-d58d-11e9-9144-d3084e762c64",
+                "documentation": "",
+                "method": "get",
+                "endpoint": "contacts",
+                "body": "[\r\n  {\r\n    \"_id\": \"5d7a942fe18e4946e931e3ca\",\r\n    \"name\": {\r\n      \"first\": \"Deborah\",\r\n      \"last\": \"Jackson\"\r\n    },\r\n    \"cpf\": \"5d7a942f4c5e8bc316e06ba5\",\r\n    \"email\": \"deborah.jackson@undefined.io\",\r\n    \"phone\": \"+55 (915) 568-2511\",\r\n    \"address\": \"845 Roosevelt Court, Nescatunga, Nevada, 7815\",\r\n    \"picture\": \"http://lorempixel.com/400/200/\"\r\n  },\r\n  {\r\n    \"_id\": \"5d7a942f0ddfa7a397fb1fb5\",\r\n    \"name\": {\r\n      \"first\": \"Annie\",\r\n      \"last\": \"Todd\"\r\n    },\r\n    \"cpf\": \"5d7a942f058dd68f9ebbcb27\",\r\n    \"email\": \"annie.todd@undefined.com\",\r\n    \"phone\": \"+55 (909) 524-2605\",\r\n    \"address\": \"150 Desmond Court, Balm, South Carolina, 7804\",\r\n    \"picture\": \"http://lorempixel.com/400/200/\"\r\n  },\r\n  {\r\n    \"_id\": \"5d7a942fccdc491b84307562\",\r\n    \"name\": {\r\n      \"first\": \"Travis\",\r\n      \"last\": \"Rhodes\"\r\n    },\r\n    \"cpf\": \"5d7a942f693d427ee8942d2f\",\r\n    \"email\": \"travis.rhodes@undefined.info\",\r\n    \"phone\": \"+55 (924) 512-3478\",\r\n    \"address\": \"672 Bogart Street, Franklin, Kansas, 4928\",\r\n    \"picture\": \"http://lorempixel.com/400/200/\"\r\n  },\r\n  {\r\n    \"_id\": \"5d7a942f226f47648bfab9ae\",\r\n    \"name\": {\r\n      \"first\": \"Ora\",\r\n      \"last\": \"Leonard\"\r\n    },\r\n    \"cpf\": \"5d7a942fd4402ad19cbab84f\",\r\n    \"email\": \"ora.leonard@undefined.me\",\r\n    \"phone\": \"+55 (920) 443-3075\",\r\n    \"address\": \"208 Monroe Place, Murillo, Indiana, 1047\",\r\n    \"picture\": \"http://lorempixel.com/400/200/\"\r\n  },\r\n  {\r\n    \"_id\": \"5d7a942f2e1612631bf95cb4\",\r\n    \"name\": {\r\n      \"first\": \"Elsa\",\r\n      \"last\": \"Holloway\"\r\n    },\r\n    \"cpf\": \"5d7a942f6e320b3bfb1b4fcf\",\r\n    \"email\": \"elsa.holloway@undefined.net\",\r\n    \"phone\": \"+55 (926) 412-2219\",\r\n    \"address\": \"169 Howard Place, Bowden, Utah, 6556\",\r\n    \"picture\": \"http://lorempixel.com/400/200/\"\r\n  },\r\n  {\r\n    \"_id\": \"5d7a942fff7018a1578de36a\",\r\n    \"name\": {\r\n      \"first\": \"Sanchez\",\r\n      \"last\": \"Gross\"\r\n    },\r\n    \"cpf\": \"5d7a942fc3533d1051892461\",\r\n    \"email\": \"sanchez.gross@undefined.name\",\r\n    \"phone\": \"+55 (861) 449-3770\",\r\n    \"address\": \"639 Stratford Road, Frank, Wyoming, 2206\",\r\n    \"picture\": \"http://lorempixel.com/400/200/\"\r\n  },\r\n  {\r\n    \"_id\": \"5d7a942f431e90fb66d82574\",\r\n    \"name\": {\r\n      \"first\": \"Ferrell\",\r\n      \"last\": \"Young\"\r\n    },\r\n    \"cpf\": \"5d7a942f5042ff41af6e6c7c\",\r\n    \"email\": \"ferrell.young@undefined.co.uk\",\r\n    \"phone\": \"+55 (801) 580-2129\",\r\n    \"address\": \"891 Dank Court, Avoca, West Virginia, 6465\",\r\n    \"picture\": \"http://lorempixel.com/400/200/\"\r\n  },\r\n  {\r\n    \"_id\": \"5d7a942fb46ea6c7c69206f0\",\r\n    \"name\": {\r\n      \"first\": \"Angelita\",\r\n      \"last\": \"Shaw\"\r\n    },\r\n    \"cpf\": \"5d7a942fc6cce2d7d865805d\",\r\n    \"email\": \"angelita.shaw@undefined.biz\",\r\n    \"phone\": \"+55 (831) 590-3985\",\r\n    \"address\": \"112 Montauk Court, Trona, Maine, 6077\",\r\n    \"picture\": \"http://lorempixel.com/400/200/\"\r\n  },\r\n  {\r\n    \"_id\": \"5d7a942fc72c2c65a6db2fa0\",\r\n    \"name\": {\r\n      \"first\": \"Dorthy\",\r\n      \"last\": \"Hopkins\"\r\n    },\r\n    \"cpf\": \"5d7a942f23156f3deffa4e3f\",\r\n    \"email\": \"dorthy.hopkins@undefined.us\",\r\n    \"phone\": \"+55 (819) 600-2848\",\r\n    \"address\": \"760 Kingston Avenue, Belmont, Tennessee, 6325\",\r\n    \"picture\": \"http://lorempixel.com/400/200/\"\r\n  },\r\n  {\r\n    \"_id\": \"5d7a942fd987df72be31ed08\",\r\n    \"name\": {\r\n      \"first\": \"Ramirez\",\r\n      \"last\": \"Taylor\"\r\n    },\r\n    \"cpf\": \"5d7a942f16d3cee77ed98ed9\",\r\n    \"email\": \"ramirez.taylor@undefined.org\",\r\n    \"phone\": \"+55 (970) 422-3501\",\r\n    \"address\": \"753 Milton Street, Tecolotito, Hawaii, 4300\",\r\n    \"picture\": \"http://lorempixel.com/400/200/\"\r\n  }\r\n]",
+                "latency": 2000,
+                "statusCode": "200",
+                "headers": [
+                    {
+                        "key": "",
+                        "value": ""
+                    }
+                ],
+                "filePath": "",
+                "sendFileAsBody": false
+            },
+            {
+                "uuid": "db0b35e0-d655-11e9-ad61-c562b101c1b9",
+                "documentation": "",
+                "method": "post",
+                "endpoint": "contacts",
+                "body": "{\n    \"success\" : true,\n    \"data\" : {\n        _id : \"5d7a942fe18e4946e931e3ca\"\n    }\n}",
+                "latency": 2000,
+                "statusCode": "200",
+                "headers": [
+                    {
+                        "key": "",
+                        "value": ""
+                    }
+                ],
+                "filePath": "",
+                "sendFileAsBody": false
+            },
+            {
+                "uuid": "dbc86b60-d655-11e9-ad61-c562b101c1b9",
+                "documentation": "",
+                "method": "put",
+                "endpoint": "contacts/5d7a942fe18e4946e931e3ca",
+                "body": "{\n    \"success\" : true\n}",
+                "latency": 2000,
+                "statusCode": "200",
+                "headers": [
+                    {
+                        "key": "",
+                        "value": ""
+                    }
+                ],
+                "filePath": "",
+                "sendFileAsBody": false
+            }
+        ],
+        "proxyMode": false,
+        "proxyHost": "",
+        "https": false,
+        "cors": true,
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json"
+            },
+            {
+                "key": "Access-Control-Allow-Origin",
+                "value": "*"
+            },
+            {
+                "key": "Access-Control-Allow-Headers",
+                "value": "Origin, X-Requested-With, Content-Type, Accept"
+            },
+            {
+                "key": "Access-Control-Allow-Methods",
+                "value": "GET, POST, PUT, DELETE, OPTIONS"
+            }
+        ]
+    }
+}
